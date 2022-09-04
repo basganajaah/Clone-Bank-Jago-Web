@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Clone Bank Jago</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <style>
+        *, html {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          margin: 0;
+        }
+        
+        .nav-hover:hover {
+          color: #a605ad;
+          transition: all 0.2s linear;
+        }
+        .link-download {
+          text-decoration: none;
+        }
+        .btn-jago {
+          color: black;
+          background-color: transparent;
+          border-color: black;
+          border-radius: 35px;
+          text-decoration: none;
+        }
+        .btn-jago:hover {
+          background-color: black;
+          color: white;
+        }
+        .search-color {
+          border-color:black;
+          border-style: none;
+        }
+        .search {
+          height: 20px;
+          width: 20px;
+        }
+        .carousel-contain {
+          background-color: #FDAF27;
+        }
+        .carousel-img {
+          opacity: 0.5;
+        }
+        .carousel-indicators .active{
+          background-color: rgb(64, 64, 64);
+        }
+        .acc-1 {
+          background-color: #FDAF27;
+        }
+        .btn-jago-2 {
+          color: #fff;
+          background-color: #a605ad;
+          border-color: #a605ad;
+          border-radius: 30px;
+          font-size: small;
+          text-decoration: none;
+        }
+        .btn-jago-2:hover {
+          color: #fff;
+          background-color: #710075;
+        }
+        .alert-bg {
+          background-color: #ffefd4;
+          border: #ffefd4;
+          border-radius: 18px;
+        }
+        .security-img {
+          height: 400px;
+          width: auto;
+          background-color: #F4B6EF;
+          border-radius: 18px;
+        }
+        .security-txt {
+          text-align: left;
+          align-items: center;
+        }
+        .li-section {
+          margin-right: 0px;
+          margin-left: 40px;
+        }
+        .footer-img {
+          max-width: 150px;
+          height: 200px;
+        }
+        .footer-content {
+          justify-content: end;
+          list-style-type: none;
+          display: flex;  
+        }
+        .li-footer {
+          text-decoration: none;
+          padding-left: 35px;
+          color: #fff;
+        }
+        .li-footer:hover {
+          color: #a605ad;
+          transition: all 0.2s linear;
+        }
+        .p-footer {
+          font-size: small;
+        }
+        .media-footer {
+          padding-left: 10px;
+          opacity: 80%;
+        }
+        .media-footer:hover {
+          opacity: 100%;
+          transition: all 0.2s linear;
+        }
+        .end-footer {
+          text-decoration: none;
+          padding-left: 20px;
+          color: #fff;
+          font-size: small;
+        }
+        .end-footer:hover {
+          color: #a605ad;
+          transition: all 0.2s linear;
+        }
+        /* @media only screen and (max-width: 600px) {
+          .navbar {
+            display: none;
+          }
+        } */
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION BAR -->
+      <nav class="navbar navbar-expand-lg bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand mx-3" href="#">
+              <img src="logo-jago.svg" alt="logo jago">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle nav-hover fw-bold" style="opacity: 75%;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">JAGO</a>
+                      <ul class="dropdown-menu">
+                      <li><b class="mx-2">Promo</b><a class="dropdown-item nav-hover" href="#">Jago Agustusan</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago BENERAN!</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago MANTUUL</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago Rame Rame</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago Bunga 7%</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago x GoPay</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago x Bibit KEJUTAN</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago x Stockbit</a></li>
+                      <li><b class="mx-2">Partner</b><a class="dropdown-item nav-hover" href="#">Bibit</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">GoBiz</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">GoPay</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Stock bit</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Kredit Pintar</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle nav-hover fw-bold" style="opacity: 75%;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">JAGO SYARIAH</a>
+                      <ul class="dropdown-menu">
+                      <li><b class="mx-2">Promo</b><a class="dropdown-item nav-hover" href="#">Jago Syariah Agustusan</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago Syariah MANTUL</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago Traktir</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Jago Syariah x Bibit Kejutan</a></li>
+                      <li><b class="mx-2">Partner</b><a class="dropdown-item nav-hover" href="#">Bibit</a></li>
+                  </ul>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle nav-hover fw-bold" style="opacity: 75%;" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">PERUSAHAAN</a>
+                      <ul class="dropdown-menu">
+                      <li><b class="mx-2">Info Perusahaan</b><a class="dropdown-item nav-hover" href="#">Tentang Jago</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Pusat Media</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Hubungi Kami</a></li>
+                      <li><a class="dropdown-item nav-hover" href="#">Biaya & Limit</a></li>
+                      </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-hover fw-bold" style="opacity: 75%;" href="#">BLOG</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link nav-hover fw-bold" style="opacity: 75%;" href="#">BANTUAN</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn search-color" type="submit">
+              <img src="search.png" alt="search icon" class="search">
+            </button>
+          </form>
+          <a href="#" class="link-download">
+            <button type="button" class="btn btn-jago mx-3"><b>Download</b></button>
+          </a>
+      </nav>
+    <!-- NAVIGATION BAR END -->
+
+    <!-- IMAGE SLIDER -->
+      <div class="container-fluid carousel-contain mb-5">
+        <div>
+          <div class="container">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="4" aria-label="Slide 5"></button>
+                <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="/carousel img/jago 1.jpg" class="d-block w-100" alt="cashback gofood">
+                </div>
+                <div class="carousel-item">
+                  <img src="/carousel img/jago 2.jpg" class="d-block w-100" alt="selangkah lebih jago">
+                </div>
+                <div class="carousel-item">
+                  <img src="/carousel img/jago 3.jpg" class="d-block w-100" alt="jago mantul">
+                </div>
+                <div class="carousel-item">
+                  <img src="/carousel img/jago 4.jpg" class="d-block w-100" alt="jago beneran">
+                </div>
+                <div class="carousel-item">
+                  <img src="/carousel img/jago 5.jpg" class="d-block w-100" alt="jago traktir">
+                </div>
+                <div class="carousel-item">
+                  <img src="/carousel img/jago 6.jpg" class="d-block w-100" alt="ajak teman gabung jago">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- IMAGE SLIDER END -->
+
+    <!-- ACCORDION 1 -->
+      <section class="container mt-5 mb-5 p-4">
+        <div class="">
+          <div class="row">
+            <div class="col-4">
+              <img src="/accordion img/accordion 1.png" alt="jago untuk hari ini">
+            </div>
+            <div class="col px-5">
+              <div class="">
+                <h2 class="fw-bold mb-2">Jago untuk Hari Ini</h2>
+                <p class="mb-4">Nikmati hidup yang kamu mau, tanpa buang waktu untuk urusan keuangan yang gak perlu.</p>
+              </div>
+              <div class="">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Kantong
+                      </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Buat Kantong untuk masing-masing kebutuhan, bikin pengaturan keuangan jadi lebih mudah.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        Kirim & Bayar
+                      </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Kirim uang dan bayar tagihan, semua ada di ujung jari.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Top up e-Wallet
+                      </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Top up semua e-Wallet kamu lebih cepat dan mudah.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFour">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Kartu Debit Visa
+                      </button>
+                    </h2>
+                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Kemudahan melakukan pembayaran online atau transaksi di mesin ATM dan EDC berlogo ATM Bersama dan Alto di Indonesia serta Visa di seluruh dunia.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingFive">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Hubungkan Kantong Jago dengan Gojek
+                      </button>
+                    </h2>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Pakai Kantong Jago untuk membayar layanan Gojek-mu! Tanpa perlu top up atau pindah aplikasi.
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- ACCORDION 1 END -->
+
+    <!-- ACCORDION 2 -->
+      <section class="container mt-5 mb-5 p-4">
+        <div class="">
+          <div class="row">
+            <div class="col px-5">
+              <div class="">
+                <h2 class="fw-bold mb-2">Jago untuk Masa Depan</h2>
+                <p class="mb-4">Segala kemudahan ada di genggaman. Saatnya maju dan wujudkan mimpi satu per satu.</p>
+              </div>
+              <div class="">
+                <div class="accordion" id="accordionExample1">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSix">
+                      <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="true" aria-controls="collapseSix">
+                        Kantong Nabung
+                      </button>
+                    </h2>
+                    <div id="collapseSix" class="accordion-collapse collapse show" aria-labelledby="headingSix" data-bs-parent="#accordionExample1">
+                      <div class="accordion-body">
+                        Buat target menabung dengan Kantong Nabungmu. Pantau kapan saja dan lihat mimpimu jadi nyata.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingSeven">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                        Kantong Terkunci
+                      </button>
+                    </h2>
+                    <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven" data-bs-parent="#accordionExample1">
+                      <div class="accordion-body">
+                        Lindungi uang kamu dari pengeluaran yang kurang perlu dan dapatkan bunga pada saat bersamaan. Mulai kunci Kantongmu dari sesingkat 14 hari dan tambahkan uang ke Kantong kapan saja.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEight">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                        Rencanakan
+                      </button>
+                    </h2>
+                    <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample1">
+                      <div class="accordion-body">
+                        Fitur pintar yang mengurus semua pembayaran tagihan dan top-up dengan otomatis.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingNine">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                        Investasi makin mudah dengan Bibit
+                      </button>
+                    </h2>
+                    <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine" data-bs-parent="#accordionExample1">
+                      <div class="accordion-body">
+                        Hubungkan Kantong Jago dengan Akun Bibit-mu. Raih kebebasan finansial dengan jauh lebih mudah melalui investasi sederhana tanpa biaya top-up.
+                      </div>
+                    </div>
+                  </div> 
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <img src="/accordion img/accordion 2.png" alt="jago untuk masa depan">
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- ACCORDION 2 END -->
+
+    <!-- ACCORDION 3 -->
+      <section class="container mt-5 mb-5 p-4">
+        <div class="">
+          <div class="row">
+            <div class="col-4">
+              <img src="/accordion img/accordion 3.png" alt="jago bersama">
+            </div>
+            <div class="col px-5">
+              <div class="">
+                <h2 class="fw-bold mb-2">Jago Bersama</h2>
+                <p class="mb-4">Rencanakan dan susun masa depan bersama dengan keluarga & teman.</p>
+              </div>
+              <div class="">
+                <div class="accordion" id="accordionExample2">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTen">
+                      <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen" aria-expanded="true" aria-controls="collapseTen">
+                        Kantong Bersama
+                      </button>
+                    </h2>
+                    <div id="collapseTen" class="accordion-collapse collapse show" aria-labelledby="headingTen" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        Urus keuangan bersama orang-orang terdekat dan wujudkan mimpi kalian bersama.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingEleven">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseEleven">
+                        Kantong Berbagi
+                      </button>
+                    </h2>
+                    <div id="collapseEleven" class="accordion-collapse collapse" aria-labelledby="headingEleven" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        Kirim uang disertai kartu ucapan kepada keluarga dan teman-teman tersayang.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwelve">
+                      <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve" aria-expanded="false" aria-controls="collapseTwelve">
+                        Tagih Uang
+                      </button>
+                    </h2>
+                    <div id="collapseTwelve" class="accordion-collapse collapse" aria-labelledby="headingTwelve" data-bs-parent="#accordionExample2">
+                      <div class="accordion-body">
+                        Jangan ada utang tak terbayar, karena kamu bisa kirim permintaan uang.
+                      </div>
+                    </div>
+                  </div>
+
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- ACCORDION 3 END -->
+
+    <!-- SECTION 1 -->
+      <section class="container text-center" type="button" href="#">
+          <h3 class="mt-5 mb-4 fw-bold">Mulai Pake Jago</h3>
+          <div class="row">
+              <div class="col border border-secondary mx-2 px-0 shadow-sm rounded">
+                <img class="rounded" src="https://jago.com/video/video-cara-bikin-akun-jago.jpg" style="height: 350px; width: 100%;" alt="cara bikin akun jago">
+              <div class="px-3 py-2" style="height: 50px;">
+                  <span class="float-start fw-bold">Cara Bikin Akun Jago</span>
+                  <span class="float-end" href="#">A</span>
+              </div>
+              </div>
+              
+              <div class="col border border-secondary mx-2 px-0 shadow-sm rounded">
+                <img class="rounded" src="https://jago.com/video/video-siap-jadi-jago.jpg" style="height: 350px; width: 100%;" alt="video siap jadi jago">
+              <div class="px-3 py-2" style="height: 50px;">
+                  <span class="float-start fw-bold">Cara Menggunakan Jago</span>
+                  <span class="float-end">B</span>
+              </div>
+          </div>
+        </div>
+        <a href="#">
+          <button type="button" class="btn btn-jago-2 mt-5 mb-5 px-4 fw-bold">LIHAT VIDEO LAINNYA</button>
+        </a>
+      </section>
+    <!-- SECTION 1 END -->
+
+    <!-- SECTION 2 -->
+      <section class="container py-5 my-5">
+        <div class="row">
+          <div class="col security-img text-center">
+            <img class="security-img align-items-center px-5" src="security-2d.png" alt="security-2d">
+          </div>
+          <div class="col px-0">
+            <h2 class="security-txt px-5 fw-bold">Bertransaksi dengan aman <br> dan bebas dari rasa khawatir</h2>
+            <div class="li-section">
+              <ul class="">
+                  <li class="mb-3">Bank Jago terdaftar dan diawasi oleh Otoritas Jasa Keuangan (OJK)</li>
+                  <li class="mb-3">Bank Jago memiliki banking license dan izin beroperasi bank digital dari Bank Indonesia (BI)</li>
+                  <li class="mb-3">Uang kamu di Bank Jago dilindungi oleh Lembaga Penjamin Simpanan (LPS)</li>
+                  <li class="mb-3">Opsi penggunaan sidik jari, pengenalan wajah, PIN atau password saat login dan menyelesaikan transaksi melalui aplikasi Jago</li>
+                  <li class="mb-3">Notifikasi login dan transaksi (dapat diatur sesuai kebutuhan)</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <a href="#">
+                  <button class="btn btn-jago-2 mt-2 px-5 fw-bold shadow-sm">PELAJARI</button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    <!-- SECTION 2 END -->
+
+    <!-- SECTION 3 -->
+      <section class="text-center container mx-auto px-5 my-5">
+        <h2 class="fw-bold mb-3">Jalani hidup penuh makna bersama keluarga dan sahabat.</h2>
+        <p class="lead text-dark mx-auto" style="max-width:1200px">Solusi finansial yang life-centric membantu kamu membangun masa depanmu, sambil menikmati hidup bahkan dengan hal-hal terkecil yang bermakna dalam keseharianmu.<br><br>Nikmati makan siang yang lezat pada hari yang sibuk, nonton marathon serial favorit pada akhir pekan atau rencanakan liburan bersama teman baikmu. Kamu bisa melakukan apapun yang kamu mau dengan tenang, mengetahui bahwa kamu masih punya cukup bukan hanya untuk hari esok tapi juga masa depan.<br><br>Atur app Jago kamu sesuai keinginan dan kebutuhanmu, bukan sebaliknya. Jago adalah sebuah aplikasi yang membuat mengelola keuangan jadi mudah, kolaboratif dan inovatif, agar kamu bisa fokus jalani hidup, bersama keluarga &amp; sahabat.<br>Hari ini, masa depan, bersama-sama.</p>
+      </section>
+    <!-- SECTION 3 END -->
+
+    <!-- SECTION 4 -->
+      <section class="container">
+        <div class="alert-bg mx-auto mb-5">
+          <div class="row mb-5">
+            <div class="col-lg-2 col-md-3 col-12 text-center mt-3">
+              <img src="wbs-icon.png" alt="">
+            </div>
+            <div class="col-lg-10 col-md-9 col-12 text-center pr-md-6 pr-3">
+              <h3 class="fw-bold my-3">LAPORKAN!</h3>
+              <p class="text-dark mx-auto mb-4">Jika anda melihat dan mendengar Pelanggaran/Kecurangan <br class="d-lg-block d-none"><strong style="white-space:nowrap;">yang dilakukan oleh</strong> Pejabat/Pegawai di lingkungan Bank Jago.</p>
+          </div>
+          </div>
+        </div>
+      </section>
+    <!-- SECTION 4 END-->
+
+    <!-- FOOTER -->
+      <footer class="acc-1">
+        <div class="px-5 py-5">
+          <div class="row">
+            <a href="#" class="col px-0">
+              <img style="width:120px;" src="/footer img/logo-white-v2-small.png" alt="logo jago white">
+            </a>
+            <div class="col-10 px-0 footer-content">
+                <li><a class="li-footer fw-bold" href="#">Tentang Jago</a></li>
+                <li><a class="li-footer fw-bold" href="#">Pusat Media</a></li>
+                <li><a class="li-footer fw-bold" href="#">Transparansi</a></li>
+                <li><a class="li-footer fw-bold" href="#">Hubungi Kami</a></li>
+                <li><a class="li-footer fw-bold" href="#">Biaya &amp; Limit</a></li>
+                <li><a class="li-footer fw-bold" href="#">Get Help</a></li>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mt-3 mb-0 p-footer" style="padding-left: 0;">
+              <p class="mb-0 p-footer">PT Bank Jago Tbk berizin dan diawasi oleh Otoritas Jasa Keuangan (OJK), serta merupakan peserta penjaminan LPS.</p> 
+            </div>
+            <div class="col-8 mt-2 mb-0 footer-content" style="padding-right: 0;">
+              <div class="col-10 px-0 footer-content">
+                <li><a class="me-4 text-reset" href="#">
+                  <i><img class="media-footer" src="/footer img/facebook-i.svg" alt=""></i>
+                </a></li>
+                <li><a class="me-4 text-reset" href="#">
+                  <i><img class="media-footer" src="/footer img/youtube-i.svg" alt=""></i>
+                </a></li>
+                <li><a class="me-4 text-reset" href="#">
+                  <i><img class="media-footer" src="/footer img/twitter-i.svg" alt=""></i>
+                </a></li>
+                <li><a class="me-4 text-reset" href="#">
+                  <i><img class="media-footer" src="/footer img/instagram-i.svg" alt=""></i>
+                </a></li>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col mt-3 mb-0" style="padding-left: 0;">
+              <img style="max-width: 80px; height: auto;" src="/footer img/lps-id.png" alt="">
+            </div>
+            <div class="col-8 mt-3 mb-0 footer-content" style="padding-right: 0;">
+              <div class="col-10 px-0 footer-content">
+                <li><a class="end-footer" href="#">Kebijakan Privasi</a></li> <span class="text-white" style="padding-left: 20px;">|</span>
+                <li><a class="end-footer" href="#">Syarat dan Ketentuan</a></li> <span class="text-white" style="padding-left: 20px;">|</span>
+                <li><a class="end-footer" href="#">Prosedur Pengaduan Nasabah</a></li>
+            </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center pb-2">
+          created by @basgan0104@gmail.com - Bandyaga A. Sugandi 2022
+        </div>
+      </footer>
+    <!-- FOOTER END -->
+
+</body>
+</html>
